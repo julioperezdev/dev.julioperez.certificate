@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+        @page{
+            size: ledger landscape;
+            margin: 0;
+            border: 0;
+            padding: 0;
+        }
+        *{
+            border: 0;
+            padding: 0;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(91, 91, 91);
+        }
+        body{
+            max-width: 17in;
+            max-height: 11in;
+            background-color: #b1c5ff;
+        }
+        .backgroundImage{
+            width: 17in;
+            /*height: 8in;*/
+            height: 10.96in;
+        }
+        .studentName{
+            position: relative;
+            bottom: 7in;
+            text-align: center;
+            font-size: 70px;
+        }
+        .courseName{
+            position: relative;
+            bottom: 6in;
+            text-align: center;
+            font-size: 50px;
+        }
+        .certificateId{
+            position: relative;
+            bottom: 4.6in;
+            text-align: center;
+            font-size: 30px;
+        }
+        .createdAt{
+            position: relative;
+            bottom: 3.2in;
+            left: 2.9in;
+            font-size: 30px;
+        }
+        .qrValidator{
+            position: absolute;
+            bottom: 0.5in;
+            left: 7.5in;
+            margin: 0;
+            border: 0;
+            padding: 0;
+        }
+        .base{
+            height: 0;
+        }
+        .qrValidatorBase{
+            height: 0;
+            background-color: yellow;
+            margin: 0;
+            border: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <img
+        class="backgroundImage"
+        src="https://res.cloudinary.com/julioperez-dev/image/upload/v1666566216/modeloB_vwssis.png"/>
+    <div class="base">
+        <p class="studentName" th:text="${certificateInformation.studentName}"></p>
+        <p class="courseName" th:text="${certificateInformation.courseName}"></p>
+        <p class="certificateId" th:text="${certificateInformation.certificateId}"></p>
+        <p class="createdAt" th:text="${certificateInformation.formattedCreatedAt}"></p>
+<!--        <img th:src="${certificateInformation.qrValidatorPath}" alt="">-->
+<!--        <div class="qrValidatorBase">-->
+<!--            <img class="qrValidator" th:src="@{${certificateInformation.qrValidatorPath}}" />-->
+<!--        </div>-->
+    </div>
+    <div class="qrValidatorBase">
+        <img class="qrValidator" th:src="@{${certificateInformation.qrValidatorPath}}" />
+<!--        <img class="qrValidator" th:src="@{classpath:certificateBucket/qrValidator/8a88bd5a-7215-43fe-b086-c99fb2f75a74.png}" />-->
+    </div>
+</body>
+</html>
