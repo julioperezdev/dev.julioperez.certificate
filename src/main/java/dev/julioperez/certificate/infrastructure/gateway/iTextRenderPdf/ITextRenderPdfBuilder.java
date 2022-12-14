@@ -4,12 +4,16 @@ import dev.julioperez.certificate.domain.model.CertificateGenerated;
 import dev.julioperez.certificate.domain.model.CertificateInformation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ResourceUtils;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +44,6 @@ public class ITextRenderPdfBuilder implements ITextRenderPdf{
             renderer.layout();
             renderer.createPDF(fileOutputStream, false);
             renderer.finishPDF();
-
         } catch (Exception e) {
             log.error(e.getMessage(), e);
             return new CertificateGenerated(

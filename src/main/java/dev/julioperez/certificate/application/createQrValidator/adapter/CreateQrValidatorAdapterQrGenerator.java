@@ -14,6 +14,6 @@ public class CreateQrValidatorAdapterQrGenerator implements CreateQrValidatorOut
 
     @Override
     public String createQrValidator(UUID certificateId) {
-        return zxingQr.createQrToCertificate(certificateId);
+        return zxingQr.createQrToCertificateReturningBase64(certificateId);
     }
 }

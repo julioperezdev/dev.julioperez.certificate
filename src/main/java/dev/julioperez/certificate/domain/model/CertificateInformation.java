@@ -7,5 +7,5 @@ public record CertificateInformation (
         String studentName,
         String courseName,
         String formattedCreatedAt,
-        String qrValidatorPath){
+        String qrValidatorBase64){
 }

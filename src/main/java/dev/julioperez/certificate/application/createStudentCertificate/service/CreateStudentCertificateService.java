@@ -29,7 +29,6 @@ public class CreateStudentCertificateService implements CreateStudentCertificate
         log.info("termina el createStudentCertificate");
         //todo: create certificate
         String qrValidatorPath = createQrValidator.createQrValidator(studentCertificateCreated.id());
-        log.info("el path del QR ===========> {}", qrValidatorPath);
         log.info("se mapea el CertificateInformation");
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
         String dateFormatted = formatter.format(studentCertificateCreated.createdAt());

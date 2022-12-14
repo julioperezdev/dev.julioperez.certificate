@@ -87,7 +87,8 @@
 <!--        </div>-->
     </div>
     <div class="qrValidatorBase">
-        <img class="qrValidator" th:src="@{${certificateInformation.qrValidatorPath}}" />
+<!--        <img class="qrValidator" th:src="@{${certificateInformation.qrValidatorPath}}" />-->
+        <img class="qrValidator" th:src="@{'data:image/png;base64,'+${certificateInformation.qrValidatorBase64}}" />
 <!--        <img class="qrValidator" th:src="@{classpath:certificateBucket/qrValidator/8a88bd5a-7215-43fe-b086-c99fb2f75a74.png}" />-->
     </div>
 </body>
